@@ -23,19 +23,24 @@
     .card { background: #fff; border: 1px solid #eaeaea; border-radius: 4px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
     .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-    /* Force uniform image size */
-    .card img {
-      display: block;
-      width: 100%;
-      height: 200px;           /* fixed height for all images */
-      object-fit: cover;      /* crop/scale to fill */
-    }
+    /* Uniform image size */
+    .card img { display: block; width: 100%; height: 200px; object-fit: cover; }
+
+    /* Contour filter */
+    .contours { filter: url(#edge); }
 
     .card-caption { padding: 15px; font-size: 0.9rem; text-align: center; background: #fff; }
 
     /* Footer */
     footer { text-align: center; padding: 30px 0; font-size: 0.85rem; color: #888; }
   </style>
+
+  <!-- SVG filter for edge detection -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute; width:0; height:0;">
+    <filter id="edge">
+      <feConvolveMatrix order="3 3" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" divisor="1" />
+    </filter>
+  </svg>
 </head>
 <body>
 
@@ -52,6 +57,7 @@
 
   <section id="portfolio" class="portfolio">
     <div class="grid">
+      <!-- existing project cards -->
       <div class="card">
         <img src="image/ASR.png" alt="Speech Commands Recognition">
         <div class="card-caption">Speech Commands Recognition</div>
@@ -75,6 +81,18 @@
       <div class="card">
         <img src="image/smoke-plume.png" alt="Smoke Plume Modelling and Estimation">
         <div class="card-caption">Smoke Plume Modelling and Estimation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contours display section -->
+  <section id="contours" class="portfolio">
+    <h2 style="text-align:center; margin-bottom:20px;">Edge-Detected Image</h2>
+    <div class="grid">
+      <div class="card">
+        <!-- Place the reference image in images/contour-source.png -->
+        <img src="images/contour-source.png" alt="Contour View" class="contours">
+        <div class="card-caption">Contour-Only View</div>
       </div>
     </div>
   </section>
