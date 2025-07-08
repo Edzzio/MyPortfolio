@@ -5,111 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name | Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f4f4f4;
+    /* Base styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fafafa; color: #333; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header { background: #fff; border-bottom: 1px solid #eaeaea; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 2rem; letter-spacing: 2px; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul li a { font-size: 0.95rem; text-transform: uppercase; color: #555; transition: color 0.2s; }
+    nav ul li a:hover { color: #000; }
+
+    /* Portfolio grid */
+    .portfolio {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    header {
-      background-color: #35424a;
-      color: #fff;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline;
-      margin: 0 1rem;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background-color: #fff;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .projects-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
-    .project-item {
-      background-color: #eaeaea;
-      padding: 1rem;
-      border-radius: 5px;
+    .card {
+      background: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    footer {
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .card-caption {
+      padding: 15px;
+      font-size: 0.9rem;
       text-align: center;
-      padding: 1rem;
-      background-color: #35424a;
-      color: #fff;
+      background: #fff;
     }
-    a.button {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background-color: #35424a;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 3px;
-      margin-top: 0.5rem;
-    }
+
+    /* Footer */
+    footer { text-align: center; padding: 30px 0; font-size: 0.85rem; color: #888; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Your Name</h1>
     <nav>
       <ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#aviation">Aviation</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I'm <strong>Your Name</strong>, a web developer passionate about creating beautiful and functional websites. Welcome to my portfolio!</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-item">
-        <h3>Project One</h3>
-        <p>A brief description of project one. You can link to the live demo or GitHub repo.</p>
-        <a href="#" class="button">View on GitHub</a>
+  <section id="portfolio" class="portfolio">
+    <div class="grid">
+      <div class="card">
+        <img src="images/project1.jpg" alt="Project One">
+        <div class="card-caption">Maritime Surveillance Aircraft</div>
       </div>
-      <div class="project-item">
-        <h3>Project Two</h3>
-        <p>A brief description of project two. You can link to the demo or repo.</p>
-        <a href="#" class="button">View on GitHub</a>
+      <div class="card">
+        <img src="images/project2.jpg" alt="Project Two">
+        <div class="card-caption">BreakerBot</div>
       </div>
-      <!-- Add more project items as needed -->
+      <div class="card">
+        <img src="images/project3.jpg" alt="Project Three">
+        <div class="card-caption">Microbend Mode Converter</div>
+      </div>
+      <div class="card">
+        <img src="images/project4.jpg" alt="Project Four">
+        <div class="card-caption">Optical Component Exploded View</div>
+      </div>
+      <div class="card">
+        <img src="images/project5.jpg" alt="Project Five">
+        <div class="card-caption">Copper Prototype Enclosure</div>
+      </div>
+      <div class="card">
+        <img src="images/project6.jpg" alt="Project Six">
+        <div class="card-caption">Memorial Plaque Prototype</div>
+      </div>
+      <!-- Add more .card items as needed -->
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>If you'd like to get in touch, feel free to <a href="mailto:youremail@example.com" class="button">Email Me</a></p>
-  </section>
-
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    &copy; 2025 Your Name. All rights reserved.
   </footer>
+
 </body>
 </html>
-
