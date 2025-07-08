@@ -23,13 +23,13 @@
     .card { background: #fff; border: 1px solid #eaeaea; border-radius: 4px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
     .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-    /* Uniform image size + contour-only effect */
+    /* Uniform image size */
     .card img {
       display: block;
       width: 100%;
       height: 200px;
       object-fit: cover;
-      filter: url(#edge) invert(1) brightness(2);
+      /* Removed edge-detection filter */
     }
 
     .card-caption { padding: 15px; font-size: 0.9rem; text-align: center; background: #fff; }
@@ -37,13 +37,6 @@
     /* Footer */
     footer { text-align: center; padding: 30px 0; font-size: 0.85rem; color: #888; }
   </style>
-
-  <!-- SVG filter for edge detection -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute; width:0; height:0;">
-    <filter id="edge">
-      <feConvolveMatrix order="3 3" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" divisor="1" />
-    </filter>
-  </svg>
 </head>
 <body>
 
@@ -61,27 +54,27 @@
   <section id="portfolio" class="portfolio">
     <div class="grid">
       <div class="card">
-        <img src="image/1.jpg" alt="Speech Commands Recognition">
+        <img src="images/ASR.png" alt="Speech Commands Recognition">
         <div class="card-caption">Speech Commands Recognition</div>
       </div>
       <div class="card">
-        <img src="image/worker-falling.jpg" alt="Optimized Fall Detection">
+        <img src="images/worker-falling.jpg" alt="Optimized Fall Detection">
         <div class="card-caption">Optimized Fall Detection</div>
       </div>
       <div class="card">
-        <img src="image/db.jpg" alt="Big Data Architecture">
+        <img src="images/db.jpg" alt="Big Data Architecture">
         <div class="card-caption">Big Data Architecture</div>
       </div>
       <div class="card">
-        <img src="image/image-anomaly-detection.png" alt="Image Based Anomaly Detection">
+        <img src="images/image-anomaly-detection.png" alt="Image Based Anomaly Detection">
         <div class="card-caption">Image Based Anomaly Detection</div>
       </div>
       <div class="card">
-        <img src="image/1.jpg" alt="Intelligent Navigation using 3D LiDAR">
+        <img src="images/1.jpg" alt="Intelligent Navigation using 3D LiDAR">
         <div class="card-caption">Intelligent Navigation using 3D LiDAR</div>
       </div>
       <div class="card">
-        <img src="image/smoke-plume.png" alt="Smoke Plume Modelling and Estimation">
+        <img src="images/smoke-plume.png" alt="Smoke Plume Modelling and Estimation">
         <div class="card-caption">Smoke Plume Modelling and Estimation</div>
       </div>
     </div>
